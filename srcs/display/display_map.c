@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 18:49:06 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/14 09:45:14 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/14 10:01:36 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	display_map(t_data *img)
 		}
 	}
 	while (img->i == 0){
-	printf("img = %p, addr = %s, window = %p, mlx = %p", img->img, img->addr, img->window, img->mlx);
 	img->i++;
 	}
 	return (0);

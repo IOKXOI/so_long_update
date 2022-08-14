@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:58:04 by iok               #+#    #+#             */
-/*   Updated: 2022/08/14 09:53:30 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/14 10:02:24 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int main(int argc, char **argv)
     {
       while (data_img.map[y][x])
       {
-        printf("%c", data_img.map[y][x]);
         x++;
       }
       
@@ -70,17 +69,6 @@ int main(int argc, char **argv)
 }
 
 */
-
-void ft_check_struct(t_data *check)
-{
-  printf("monster :     %d\n", check->monster);
-  printf("exit :        %d\n", check->exit);
-  printf("hero :        %d\n", check->hero);
-  printf("collectible : %d\n", check->collectible);
-  printf("y :           %d\n", check->y);
-  printf("x :           %d\n", check->x);
-
-}
 
 int print_hero_test(t_data *img)
 {

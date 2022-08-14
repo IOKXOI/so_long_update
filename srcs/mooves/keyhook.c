@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 13:49:07 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/14 09:28:47 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/14 10:01:25 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static void	moove_left(int keycode, t_data *img)
 		img->map[img->y_hero][img->x_hero] = '0';
 		img->map[img->y_hero][img->x_hero - 1] = 'P';
 		img->x_hero--;
-		printf("%d\n", img->x_hero);
 	}
 	if (img->map[img->y_hero][img->x_hero - 1] == 'M')
 		write(1, "GAME OVER", 9);
@@ -40,7 +39,6 @@ static void	moove_right(int keycode, t_data *img)
 		img->map[img->y_hero][img->x_hero] = '0';
 		img->map[img->y_hero][img->x_hero + 1] = 'P';
 		img->x_hero++;
-		printf("%d\n", img->x_hero);
 	}
 	if (img->map[img->y_hero][img->x_hero + 1] == 'M')
 		write(1, "GAME OVER", 9);
@@ -57,7 +55,6 @@ static void	moove_down(int keycode, t_data *img)
 		img->map[img->y_hero][img->x_hero] = '0';
 		img->map[img->y_hero + 1][img->x_hero] = 'P';
 		img->y_hero++;
-		printf("%d\n", img->x_hero);
 	}
 	if (img->map[img->y_hero + 1][img->x_hero] == 'aaaaM')
 		write(1, "GAME OVER", 9);
@@ -74,7 +71,6 @@ static void	moove_up(int keycode, t_data *img)
 		img->map[img->y_hero][img->x_hero] = '0';
 		img->map[img->y_hero - 1][img->x_hero] = 'P';
 		img->y_hero--;
-		printf("%d\n", img->x_hero);
 	}
 	if (img->map[img->y_hero - 1][img->x_hero] == 'M')
 		write(1, "GAME OVER", 9);
@@ -82,7 +78,6 @@ static void	moove_up(int keycode, t_data *img)
 
 int	which_key(int keycode, t_data *img)
 {
-	printf("%d\n", keycode);
 	if (keycode == 97)
 	{
 		if (keycode == img->direction)
