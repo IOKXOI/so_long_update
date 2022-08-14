@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:30:40 by iok               #+#    #+#             */
-/*   Updated: 2022/08/14 09:45:37 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/14 10:09:27 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,6 @@ int		error(char *str);
 // MOOVES ///////////////////////////////////////////////////////////
 int		which_key(int keycode, t_data *img);
 
-void	garbage_removal(t_to_free *garbage_collector, int y_limit);
+void 	init_ressources(t_data *img);
 
 # endif

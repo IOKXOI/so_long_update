@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:58:04 by iok               #+#    #+#             */
-/*   Updated: 2022/08/14 10:02:24 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/14 10:10:42 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-void *destroy(img)
+/*void *destroy(img)
 {
   free_map(&img);
   
 }
+*/
 /*
 int main(int argc, char **argv)
 {
@@ -100,10 +101,11 @@ int main(int argc, char **argv)
 
   check_arg(argc, argv[1]);
   check_convert_and_scan_map(&img, argv[1]);
-  init_ressources(&img);
+  
   
   img.mlx = mlx_init();
   img.window = mlx_new_window(img.mlx, img.x * 72, img.y * 72, "le jeu");
+  init_ressources(&img);
   mlx_loop_hook(img.mlx, display_map, &img);
   mlx_hook(img.window, 2, (1L << 0), which_key, &img);
   mlx_loop(img.mlx);

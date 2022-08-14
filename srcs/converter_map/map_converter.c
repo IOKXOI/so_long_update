@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 15:33:44 by iok               #+#    #+#             */
-/*   Updated: 2022/08/14 05:29:12 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/14 10:27:06 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int count_lines(char *map_ber, t_data *img)
     int     fd;
     char    *s1;
 
-    img->y = 1;
+    img->y = 0;
     fd = open(map_ber, O_RDONLY);
     if (fd < 0)
         error("Main > convert_map > count_lines > open");
@@ -54,7 +54,7 @@ static int count_lines(char *map_ber, t_data *img)
         s1 = get_next_line(fd);
         if (!s1)
             return (0);
-        if (check_lenght(img->x, s1))
+        if (*s1 != '\n' && check_lenght(img->x, s1))
             return(0);
         img->y = img->y + 1;
     }
