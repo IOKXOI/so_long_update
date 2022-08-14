@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 13:49:07 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/14 10:07:24 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/14 15:01:56 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,15 @@ static void	moove_left(int keycode, t_data *img)
 	if (img->map[img->y_hero][img->x_hero - 1] != '1' && img->map[img->y_hero][img->x_hero - 1] != 'M')
 	{
 		if (img->map[img->y_hero][img->x_hero - 1] == 'C')
+		{
 			img->collectible--;
+			if (!img->collectible)
+				img->map[img->y_exit][img->x_exit] = 'E';
+		}
 		if (img->map[img->y_hero][img->x_hero - 1] == 'E' && img->collectible == 0)
 			write(1, "GG", 2);
-		img->map[img->y_hero][img->x_hero] = '0';
+		if (img->map[img->y_hero][img->x_hero] != 'E')
+			img->map[img->y_hero][img->x_hero] = '0';
 		img->map[img->y_hero][img->x_hero - 1] = 'P';
 		img->x_hero--;
 	}
@@ -33,10 +38,17 @@ static void	moove_right(int keycode, t_data *img)
 	if (img->map[img->y_hero][img->x_hero + 1] != '1' && img->map[img->y_hero][img->x_hero + 1] != 'M')
 	{
 		if (img->map[img->y_hero][img->x_hero + 1] == 'C')
+		{
 			img->collectible--;
+			if (!img->collectible)
+			{
+				img->map[img->y_exit][img->x_exit] = 'E';
+			}
+		}
 		if (img->map[img->y_hero][img->x_hero + 1] == 'E' && img->collectible == 0)
 			write(1, "GG", 2);
-		img->map[img->y_hero][img->x_hero] = '0';
+		if (img->map[img->y_hero][img->x_hero] != 'E')
+			img->map[img->y_hero][img->x_hero] = '0';
 		img->map[img->y_hero][img->x_hero + 1] = 'P';
 		img->x_hero++;
 	}
@@ -49,10 +61,17 @@ static void	moove_down(int keycode, t_data *img)
 	if (img->map[img->y_hero + 1][img->x_hero] != '1' && img->map[img->y_hero + 1][img->x_hero] != 'M')
 	{
 		if (img->map[img->y_hero + 1][img->x_hero] == 'C')
+		{
 			img->collectible--;
+			if (img->collectible)
+			{
+				img->map[img->y_exit][img->x_exit] = 'E';
+			}
+		}
 		if (img->map[img->y_hero + 1][img->x_hero] == 'E' && img->collectible == 0)
 			write(1, "GG", 2);
-		img->map[img->y_hero][img->x_hero] = '0';
+		if (img->map[img->y_hero][img->x_hero] != 'E')
+			img->map[img->y_hero][img->x_hero] = '0';
 		img->map[img->y_hero + 1][img->x_hero] = 'P';
 		img->y_hero++;
 	}
@@ -65,10 +84,17 @@ static void	moove_up(int keycode, t_data *img)
 	if (img->map[img->y_hero - 1][img->x_hero] != '1' && img->map[img->y_hero - 1][img->x_hero] != 'M')
 	{
 		if (img->map[img->y_hero - 1][img->x_hero] == 'C')
+		{
 			img->collectible--;
+			if (!img->collectible)
+			{
+				img->map[img->y_exit][img->x_exit] = 'E';
+			}
+		}
 		if (img->map[img->y_hero - 1][img->x_hero] == 'E' && img->collectible == 0)
 			write(1, "GG", 2);
-		img->map[img->y_hero][img->x_hero] = '0';
+		if (img->map[img->y_hero][img->x_hero] != 'E')
+			img->map[img->y_hero][img->x_hero] = '0';
 		img->map[img->y_hero - 1][img->x_hero] = 'P';
 		img->y_hero--;
 	}

@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 15:33:44 by iok               #+#    #+#             */
-/*   Updated: 2022/08/14 10:27:06 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/14 11:05:43 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ char **check_convert_and_scan_map(t_data *img, char *argv)
     img->map = malloc(sizeof(char *) * img->y);
     fill_tab(img->map, argv, img->y);
     check_walls(img);
+   
     scan = scan_elements(img);
     if (scan)
     {
@@ -97,6 +98,7 @@ char **check_convert_and_scan_map(t_data *img, char *argv)
         free_map(img);
         exit (EXIT_FAILURE);
     }
+    check_elements(img);
     return (NULL);//tab);
 }
 

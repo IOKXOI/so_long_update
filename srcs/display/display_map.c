@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 18:49:06 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/14 10:01:36 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/14 14:53:12 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,6 @@ int	display_map(t_data *img)
 			x = 0;
 			y++;
 		}
-	}
-	while (img->i == 0){
-	img->i++;
 	}
 	return (0);
 }
