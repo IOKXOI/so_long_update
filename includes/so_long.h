@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:30:40 by iok               #+#    #+#             */
-/*   Updated: 2022/08/17 02:31:21 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/17 10:57:27 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # define DOWN 115
 # define TOP 119
 # define ESC 65307
-# define ANIM_FRAME 50
-# define ANIM_LIMIT 100
+# define ANIM_FRAME 2000
+# define ANIM_LIMIT 4000
 
 
 # include <stdlib.h>
@@ -32,59 +32,92 @@
 # include "mlx_int.h"
 # include "libft.h"
 
+typedef struct s_enemies
+{
+	struct s_enemies	*first;
+	int					id;
+	int					x_pos;
+	int					y_pos;
+	int					direction;
+	int					anim;
+	int					anim_up;
+	int					random;
+	int					fram_one;
+	int					fram_two;
+	int					fram_three;
+	int					fram_four;
+	struct s_enemies	*last;
+	struct s_enemies	*next;
+} t_enemies;
+
 typedef struct s_data
 {
-    void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-	int		x_offset;
-	int		y_offset;
-	void	*window;
-	void	*mlx;
-	int		width;
-	int		height;
-	char	*ground;
-	char	*wall;
-	char	*chicken;
-	char	*portal;
-	char	*hero_face;
-	char	*hero_face_up;
-	char	*hero_back;
-	char	*hero_back_up;
-	char	*hero_left;
-	char	*hero_left_up;
-	char	*hero_right;
-	char	*hero_right_up;
-	int		direction;
-	int		mooves;
-	int		open_exit;
-	char	**map;
-	int		y;
-	int		x;
-	int		x_hero;
-	int		y_hero;
-	int		x_exit;
-	int		y_exit;
-	int		collectible;
-	int		hero;
-	int		exit;
-	int		monster;
-	int 	i;
-	int		anim;
+    void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+	int			x_offset;
+	int			y_offset;
+	void		*window;
+	void		*mlx;
+	int			width;
+	int			height;
+	char		*ground;
+	char		*wall;
+	char		*chicken;
+	char		*portal;
+	char		*hero_face;
+	char		*hero_face_up;
+	char		*hero_back;
+	char		*hero_back_up;
+	char		*hero_left;
+	char		*hero_left_up;
+	char		*hero_right;
+	char		*hero_right_up;
+	int			direction;
+	int			mooves;
+	int			open_exit;
+	char		**map;
+	int			y;
+	int			x;
+	int			x_hero;
+	int			y_hero;
+	int			x_exit;
+	int			y_exit;
+	int			collectible;
+	int			hero;
+	int			exit;
+	int			monster;
+	t_enemies	*enemies;
+	char		*hisoka_right1;
+	char		*hisoka_rightwalk1;
+	char		*hisoka_rightwalk2;
+	char		*hisoka_rightwalk3;
+	char		*hisoka_rightwalk4;
+	char		*hisoka_attackright3;
+	
+	char		*hisoka_left1;
+	char		*hisoka_leftwalk1;
+	char		*hisoka_leftwalk2;
+	char		*hisoka_leftwalk3;
+	char		*hisoka_leftwalk4;
+	char		*hisoka_attackleft3;
+	int 		i;
+	int			anim;
 } t_data;
 
-typedef struct s_map
+typedef struct s_final
 {
+	void	*win;
+	void	*mlx;
+	char	*image;
+	int 	width;
+	int		height;
+} t_final;
 
-} t_map;
 
-typedef struct s_to_free
-{
-	char	**map;
-	int		map_limit;
-} t_to_free;
+
 
 // GNL FONCTIONS ////////////////////////////////////////////////////
 void	*ft_memmove(void *dest, const void *src, size_t size);
@@ -118,6 +151,7 @@ int		display_map(t_data *img);
 void	display_stationary(t_data *img);
 void	print_hero(t_data *img);
 void	print_exit(t_data *img);
+void	print_static_hisoka(t_data *img, t_enemies *this_enemy);
 /////////////////////////////////////////////////////////////////////
 
 // FREE /////////////////////////////////////////////////////////////
@@ -126,8 +160,16 @@ void	free_map(t_data *img);
 int		error(char *str);
 void	destroy(t_data *img);
 
+void	add_enemies(t_data *img, int x, int y);
+void	print_enemy(t_data *img);
+void	gg_wp(t_data *img);
 // MOOVES ///////////////////////////////////////////////////////////
 int		which_key(int keycode, t_data *img);
+int		moove_enemy_left(t_data *img, t_enemies *this_enemy);
+int		moove_enemy_right(t_data *img, t_enemies *this_enemy);
+int		moove_enemy_top(t_data *img, t_enemies *this_enemy);
+int		moove_enemy_down(t_data *img, t_enemies *this_enemy);
+void	hisokill(t_data *img, t_enemies *this_enemy);
 
 void 	init_ressources(t_data *img);
 

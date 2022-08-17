@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:19:51 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/16 20:17:18 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/17 04:50:48 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,29 +60,4 @@ void	free_ressources(t_data *img)
 		free(img->portal);
 }
 
-static void	destroy_ressources(t_data *img)
-{
-	mlx_destroy_image(img->mlx, img->wall);
-	mlx_destroy_image(img->mlx, img->ground);
-	mlx_destroy_image(img->mlx, img->hero_face);
-	mlx_destroy_image(img->mlx, img->hero_face_up);
-	mlx_destroy_image(img->mlx, img->hero_back);
-	mlx_destroy_image(img->mlx, img->hero_back_up);
-	mlx_destroy_image(img->mlx, img->hero_left);
-	mlx_destroy_image(img->mlx, img->hero_left_up);
-	mlx_destroy_image(img->mlx, img->hero_right);
-	mlx_destroy_image(img->mlx, img->hero_right_up);
-	mlx_destroy_image(img->mlx, img->chicken);
-	mlx_destroy_image(img->mlx, img->portal);
-}
 
-void	destroy(t_data *img)
-{
-	
-	destroy_ressources(img);
-	free_map(img);
-	mlx_destroy_window(img->mlx, img->window);
-	mlx_destroy_display(img->mlx);
-	free(img->mlx);
-	exit(EXIT_SUCCESS);
-}

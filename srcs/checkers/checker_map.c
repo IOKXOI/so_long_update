@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 22:39:43 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/17 02:41:28 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/17 05:37:12 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ int		scan_elements(t_data *img)
 				img->x_hero = x;
 			}
 			else if ((char)img->map[y][x] == 'M')
+			{
 				img->monster = img->monster + 1;
+				add_enemies(img, x, y);
+			}
 			else if ((char)img->map[y][x] != '0' && (char)img->map[y][x] != '1')
 				return(img->map[y][x]);
 			x++;

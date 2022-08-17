@@ -6,7 +6,7 @@
 #    By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/31 16:38:13 by sydauria          #+#    #+#              #
-#    Updated: 2022/08/14 02:18:21 by sydauria         ###   ########.fr        #
+#    Updated: 2022/08/17 10:46:15 by sydauria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ PATH_MLX=./minilibx-linux/
 PATH_LIBFT=./libft/
 
 SRC=checker_arg.c\
+	succes.c\
 	check_ressources.c\
 	checker_map.c\
 	check_walls.c\
@@ -32,6 +33,9 @@ SRC=checker_arg.c\
 	display_elements.c\
 	error_management.c\
 	keyhook.c\
+	enemies.c\
+	display_enemies.c\
+	enemies_mooves.c\
 	main.c
 
 SRCS=$(addprefix $(SRCDIR), $(SRC))

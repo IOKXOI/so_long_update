@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 10:32:47 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/17 03:01:15 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/17 03:06:50 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,23 +59,11 @@ static void print_hero_top(t_data *img)
 void	print_hero(t_data *img)
 {
 	if (img->direction == LEFT)
-	{
 		print_hero_left(img);
-		mlx_put_image_to_window(img->mlx, img->window, img->ground, (img->x_hero + 1) * 72, img->y_hero * 72);
-	}
 	if (img->direction == RIGHT)
-	{
 		print_hero_right(img);
-		mlx_put_image_to_window(img->mlx, img->window, img->ground, (img->x_hero - 1) * 72, img->y_hero * 72);
-	}
 	if (img->direction == DOWN)
-	{
 		print_hero_face(img);
-		mlx_put_image_to_window(img->mlx, img->window, img->ground, img->x_hero * 72, (img->y_hero - 1) * 72);
-	}
 	if (img->direction == TOP)
-	{
 		print_hero_top(img);
-		mlx_put_image_to_window(img->mlx, img->window, img->ground, img->x_hero * 72, (img->y_hero + 1) * 72);
-	}
 }

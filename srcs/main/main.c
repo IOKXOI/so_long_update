@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:58:04 by iok               #+#    #+#             */
-/*   Updated: 2022/08/17 02:51:57 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/17 06:28:11 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ void init_struct(t_data *img)
 	img->hero_right = NULL;
 	img->hero_right_up = NULL;
 	img->map = NULL;
+  img->enemies = NULL;
 }
 int main(int argc, char **argv)
 {
