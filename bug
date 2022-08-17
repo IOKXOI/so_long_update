@@ -1,1 +1,765 @@
-Invalid map lenght
+==1677957== Memcheck, a memory error detector
+==1677957== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1677957== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1677957== Command: ./so_long maps/map.ber
+==1677957== 
+==1677957== 
+==1677957== Process terminating with default action of signal 2 (SIGINT)
+==1677957==    at 0x4AD9485: recvmsg (recvmsg.c:28)
+==1677957==    by 0x4BB8E2B: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB9957: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x48BA56D: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA6EC: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA9E9: _XEventsQueued (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AC210: XPending (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x11241E: mlx_loop (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111EB7: main (main.c:130)
+==1677957== 
+==1677957== HEAP SUMMARY:
+==1677957==     in use at exit: 135,070 bytes in 388 blocks
+==1677957==   total heap usage: 350,420 allocs, 350,032 frees, 11,875,774 bytes allocated
+==1677957== 
+==1677957== 3 bytes in 1 blocks are still reachable in loss record 1 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4A5838E: strdup (strdup.c:42)
+==1677957==    by 0x48AA385: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 8 bytes in 1 blocks are still reachable in loss record 2 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4A5838E: strdup (strdup.c:42)
+==1677957==    by 0x48A425E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48753F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48707B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x111F23: mlx_int_deal_shm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1121A1: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 8 bytes in 1 blocks are still reachable in loss record 3 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4875144: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48751AE: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48755A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48707B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x111F23: mlx_int_deal_shm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1121A1: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 10 bytes in 1 blocks are still reachable in loss record 4 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4A5838E: strdup (strdup.c:42)
+==1677957==    by 0x48A425E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4910C43: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AAE19: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 16 bytes in 1 blocks are still reachable in loss record 5 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4BB9F81: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB83FB: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB68F5: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BBAB72: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x48B9D29: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AA3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 21 bytes in 1 blocks are still reachable in loss record 6 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48AA83C: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 24 bytes in 1 blocks are still reachable in loss record 7 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4875351: XextCreateExtension (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x4874E1C: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x487519B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48755A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48707B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x111F23: mlx_int_deal_shm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1121A1: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 24 bytes in 1 blocks are still reachable in loss record 8 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4A5838E: strdup (strdup.c:42)
+==1677957==    by 0x48A425E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48753F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x4874E5A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x487519B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48755A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48707B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x111F23: mlx_int_deal_shm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1121A1: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 24 bytes in 1 blocks are still reachable in loss record 9 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48751CD: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48755A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48707B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x111F23: mlx_int_deal_shm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1121A1: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 29 bytes in 1 blocks are still reachable in loss record 10 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48A514D: _XUpdateAtomCache (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48A5519: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x112192: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 32 bytes in 1 blocks are still reachable in loss record 11 of 82
+==1677957==    at 0x483B723: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x483E017: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4BB9B9E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB9C2B: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB713E: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB71B4: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x48AACD8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 32 bytes in 1 blocks are still reachable in loss record 12 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4BB90C5: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB6E9E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB861E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB8734: xcb_wait_for_reply (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB9C82: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB713E: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BB71B4: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x48AACD8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 32 bytes in 1 blocks are still reachable in loss record 13 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48753CF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48707B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x111F23: mlx_int_deal_shm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1121A1: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 32 bytes in 1 blocks are still reachable in loss record 14 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48753CF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x4874E5A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x487519B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48755A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48707B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x111F23: mlx_int_deal_shm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1121A1: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 33 bytes in 1 blocks are still reachable in loss record 15 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48A514D: _XUpdateAtomCache (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48A5519: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x11217B: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 40 bytes in 1 blocks are still reachable in loss record 16 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48BBDD1: _XPollfdCacheInit (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AA66F: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 48 bytes in 1 blocks are still reachable in loss record 17 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48B9CB1: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AA3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 48 bytes in 1 blocks are still reachable in loss record 18 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48B9CC7: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AA3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 48 bytes in 1 blocks are still reachable in loss record 19 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x490B6E0: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907968: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907E57: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x113867: mlx_int_param_KeyPress (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1124E5: mlx_loop (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111EB7: main (main.c:130)
+==1677957== 
+==1677957== 72 bytes in 1 blocks are still reachable in loss record 20 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48AA721: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 72 bytes in 1 blocks are still reachable in loss record 21 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x490B6C4: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907968: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907E57: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x113867: mlx_int_param_KeyPress (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1124E5: mlx_loop (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111EB7: main (main.c:130)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 22 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1104E6: init_ressources (display_map.c:16)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 23 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x110515: init_ressources (display_map.c:17)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 24 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x110544: init_ressources (display_map.c:18)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 25 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x110573: init_ressources (display_map.c:19)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 26 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1105A2: init_ressources (display_map.c:19)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 27 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1105D1: init_ressources (display_map.c:20)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 28 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x110600: init_ressources (display_map.c:21)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 29 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11062F: init_ressources (display_map.c:22)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 30 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11065E: init_ressources (display_map.c:23)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 31 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x110690: init_ressources (display_map.c:24)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 32 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1106C2: init_ressources (display_map.c:25)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 88 bytes in 1 blocks are still reachable in loss record 33 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x113AFB: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1106F4: init_ressources (display_map.c:26)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 104 bytes in 1 blocks are still reachable in loss record 34 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x11043C: check_convert_and_scan_map (map_converter.c:103)
+==1677957==    by 0x111DC2: main (main.c:120)
+==1677957== 
+==1677957== 104 bytes in 1 blocks are still reachable in loss record 35 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48B9BB2: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AA3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 112 bytes in 1 blocks are still reachable in loss record 36 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48AA9A0: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 126 bytes in 6 blocks are still reachable in loss record 37 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x11453C: ft_strjoin_and_free (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11424D: get_next_line (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11037A: fill_tab (map_converter.c:82)
+==1677957==    by 0x11046E: check_convert_and_scan_map (map_converter.c:104)
+==1677957==    by 0x111DC2: main (main.c:120)
+==1677957== 
+==1677957== 128 bytes in 1 blocks are still reachable in loss record 38 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48AA8D0: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 128 bytes in 1 blocks are still reachable in loss record 39 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48A424E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4910C43: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AAE19: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 128 bytes in 1 blocks are still reachable in loss record 40 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48A424E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48753F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48707B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x111F23: mlx_int_deal_shm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1121A1: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 128 bytes in 1 blocks are still reachable in loss record 41 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48A424E: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48753F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x4874E5A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x487519B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48755A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48707B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x111F23: mlx_int_deal_shm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1121A1: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 42 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x1120CF: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 43 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1104E6: init_ressources (display_map.c:16)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 44 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x110515: init_ressources (display_map.c:17)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 45 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x110544: init_ressources (display_map.c:18)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 46 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x110573: init_ressources (display_map.c:19)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 47 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1105A2: init_ressources (display_map.c:19)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 48 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1105D1: init_ressources (display_map.c:20)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 49 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x110600: init_ressources (display_map.c:21)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 50 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11062F: init_ressources (display_map.c:22)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 51 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11065E: init_ressources (display_map.c:23)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 52 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x110690: init_ressources (display_map.c:24)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 53 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1106C2: init_ressources (display_map.c:25)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 136 bytes in 1 blocks are still reachable in loss record 54 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4870BB3: XShmCreateImage (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x113B26: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1106F4: init_ressources (display_map.c:26)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 149 bytes in 1 blocks are still reachable in loss record 55 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48AAE81: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 152 bytes in 1 blocks are still reachable in loss record 56 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4910E3E: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AAE19: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 160 bytes in 1 blocks are still reachable in loss record 57 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x489882F: XCreateGC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AAD48: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 160 bytes in 1 blocks are still reachable in loss record 58 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x489882F: XCreateGC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x11231E: mlx_new_window (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111E09: main (main.c:123)
+==1677957== 
+==1677957== 168 bytes in 1 blocks are still reachable in loss record 59 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48AAC37: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 208 bytes in 1 blocks are still reachable in loss record 60 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48750F9: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48751AE: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48755A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x48707B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==1677957==    by 0x111F23: mlx_int_deal_shm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1121A1: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 208 bytes in 1 blocks are still reachable in loss record 61 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48BD53E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA0B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BAB10: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48B9039: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x112625: mlx_int_wait_first_expose (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11235D: mlx_new_window (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111E09: main (main.c:123)
+==1677957== 
+==1677957== 208 bytes in 1 blocks are still reachable in loss record 62 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48BD53E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA0B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA9E1: _XEventsQueued (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x489BCCD: XFlush (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x110EBC: display_stationary (display_elements.c:27)
+==1677957==    by 0x111E2E: main (main.c:125)
+==1677957== 
+==1677957== 211 bytes in 7 blocks are still reachable in loss record 63 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x114463: ft_strndup (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11408F: extract_str (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x114236: get_next_line (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11037A: fill_tab (map_converter.c:82)
+==1677957==    by 0x11046E: check_convert_and_scan_map (map_converter.c:104)
+==1677957==    by 0x111DC2: main (main.c:120)
+==1677957== 
+==1677957== 256 bytes in 1 blocks are still reachable in loss record 64 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x49195DD: XkbAllocClientMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B45D: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B5BD: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B64C: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B714: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907968: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907E57: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x113867: mlx_int_param_KeyPress (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1124E5: mlx_loop (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111EB7: main (main.c:130)
+==1677957== 
+==1677957== 344 bytes in 6 blocks are still reachable in loss record 65 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x490ADD5: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B5BD: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B64C: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B714: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907968: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907E57: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x113867: mlx_int_param_KeyPress (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1124E5: mlx_loop (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111EB7: main (main.c:130)
+==1677957== 
+==1677957== 416 bytes in 2 blocks are still reachable in loss record 66 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48BD53E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA0B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BAB10: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48B9070: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x112625: mlx_int_wait_first_expose (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11235D: mlx_new_window (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111E09: main (main.c:123)
+==1677957== 
+==1677957== 512 bytes in 1 blocks are still reachable in loss record 67 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48A50BA: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48A543E: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x11217B: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 832 bytes in 4 blocks are still reachable in loss record 68 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48BD53E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA0B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BB01C: _XReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48B67F0: XSync (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x113BE7: mlx_int_new_xshm_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113E22: mlx_new_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x112F57: mlx_int_parse_xpm (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x113391: mlx_xpm_file_to_image (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1104E6: init_ressources (display_map.c:16)
+==1677957==    by 0x111E1F: main (main.c:124)
+==1677957== 
+==1677957== 936 bytes in 1 blocks are still reachable in loss record 69 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x112280: mlx_new_window (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111E09: main (main.c:123)
+==1677957== 
+==1677957== 1,120 bytes in 1 blocks are still reachable in loss record 70 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x49196A1: XkbAllocClientMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B26F: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B5BD: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B64C: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B714: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907968: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907E57: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x113867: mlx_int_param_KeyPress (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1124E5: mlx_loop (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111EB7: main (main.c:130)
+==1677957== 
+==1677957== 1,456 bytes in 7 blocks are still reachable in loss record 71 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48BD53E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA0B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BAB59: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48B9070: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x112625: mlx_int_wait_first_expose (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11235D: mlx_new_window (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111E09: main (main.c:123)
+==1677957== 
+==1677957== 2,028 bytes in 27 blocks are still reachable in loss record 72 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x490ABBD: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B5BD: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B64C: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B714: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907968: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907E57: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x113867: mlx_int_param_KeyPress (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1124E5: mlx_loop (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111EB7: main (main.c:130)
+==1677957== 
+==1677957== 2,048 bytes in 1 blocks are still reachable in loss record 73 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x490ADF4: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B5BD: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B64C: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B714: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907968: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907E57: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x113867: mlx_int_param_KeyPress (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1124E5: mlx_loop (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111EB7: main (main.c:130)
+==1677957== 
+==1677957== 2,496 bytes in 12 blocks are still reachable in loss record 74 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48BD53E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA0B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BAB59: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48B9039: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x112625: mlx_int_wait_first_expose (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x11235D: mlx_new_window (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111E09: main (main.c:123)
+==1677957== 
+==1677957== 4,688 bytes in 1 blocks are still reachable in loss record 75 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48AA371: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 5,120 bytes in 1 blocks are still reachable in loss record 76 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x490B4EC: _XkbReadGetMapReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B5BD: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B64C: XkbGetUpdatedMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x490B714: XkbGetMap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907968: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x4907E57: XkbKeycodeToKeysym (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x113867: mlx_int_param_KeyPress (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x1124E5: mlx_loop (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111EB7: main (main.c:130)
+==1677957== 
+==1677957== 5,684 bytes in 1 blocks are still reachable in loss record 77 of 82
+==1677957==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4BB6A62: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BBAB72: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x48B9D29: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AA3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 12,768 bytes in 2 blocks are still reachable in loss record 78 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48AAA24: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 13,728 bytes in 66 blocks are still reachable in loss record 79 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48BD53E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA0B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA9E1: _XEventsQueued (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x489BCCD: XFlush (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x110E52: display_stationary (display_elements.c:25)
+==1677957==    by 0x111E2E: main (main.c:125)
+==1677957== 
+==1677957== 16,384 bytes in 1 blocks are still reachable in loss record 80 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48AA6BF: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 21,168 bytes in 1 blocks are still reachable in loss record 81 of 82
+==1677957==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x4BB6884: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x4BBAB72: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
+==1677957==    by 0x48B9D29: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48AA3A8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x1120E7: mlx_init (in /mnt/nfs/homes/sydauria/Desktop/In_progress/so_long/so_long)
+==1677957==    by 0x111DCC: main (main.c:122)
+==1677957== 
+==1677957== 37,024 bytes in 178 blocks are still reachable in loss record 82 of 82
+==1677957==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1677957==    by 0x48BD53E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA0B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x48BA9E1: _XEventsQueued (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x489BCCD: XFlush (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==1677957==    by 0x110F26: display_stationary (display_elements.c:29)
+==1677957==    by 0x111E2E: main (main.c:125)
+==1677957== 
+==1677957== LEAK SUMMARY:
+==1677957==    definitely lost: 0 bytes in 0 blocks
+==1677957==    indirectly lost: 0 bytes in 0 blocks
+==1677957==      possibly lost: 0 bytes in 0 blocks
+==1677957==    still reachable: 135,070 bytes in 388 blocks
+==1677957==         suppressed: 0 bytes in 0 blocks
+==1677957== 
+==1677957== For lists of detected and suppressed errors, rerun with: -s
+==1677957== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 3521 from 1)

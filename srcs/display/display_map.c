@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 18:49:06 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/14 14:53:12 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/17 02:36:35 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,6 @@ int	display_map(t_data *img)
 	y = 0;
 	while(y < img->y && x < img->x)
 	{
-		if (img->map[y][x] == '1')
-			mlx_put_image_to_window(img->mlx, img->window, img->wall, x * 72, y * 72);
-		if (img->map[y][x] == '0')
-			mlx_put_image_to_window(img->mlx, img->window, img->ground, x * 72, y * 72);
-		if (img->map[y][x] == 'C')
-			mlx_put_image_to_window(img->mlx, img->window, img->chicken, x * 72, y * 72);
 		if (img->map[y][x] == 'E')
 			print_exit(img);
 		if (img->map[y][x] == 'P')

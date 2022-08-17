@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 20:05:43 by iok               #+#    #+#             */
-/*   Updated: 2022/08/14 10:13:08 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/15 10:13:25 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static int scan_bot_wall(char **map, int max_y, int max_x)
 
 void  check_walls(t_data *img)
 {
-    if (!img->map || !**img->map)
+    if (!img->map)
     {
         write(1, "Map invalid - check_walls", 25);
         exit(EXIT_FAILURE);

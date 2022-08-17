@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:58:04 by iok               #+#    #+#             */
-/*   Updated: 2022/08/14 10:10:42 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/17 02:51:57 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,32 +82,51 @@ int print_hero_test(t_data *img)
 		img->anim = 0;
 }
 
-////
-
+void init_struct(t_data *img)
+{
+  img->monster = 0;
+  img->exit = 0;
+  img->hero = 0;
+  img->anim = 0;
+  img->collectible = 0;
+  img->x_offset = 0;
+  img->y_offset = 0;
+  img->direction = 97;
+  img->mooves = 0;
+  img->open_exit = 0;
+  img->ground = NULL;
+	img->wall = NULL;
+	img->chicken = NULL;
+	img->portal = NULL;
+	img->hero_face = NULL;
+	img->hero_face_up = NULL;
+	img->hero_back = NULL;
+	img->hero_back_up = NULL;
+	img->hero_left = NULL;
+	img->hero_left_up = NULL;
+	img->hero_right = NULL;
+	img->hero_right_up = NULL;
+	img->map = NULL;
+}
 int main(int argc, char **argv)
 {
   t_data img;
   int i = 0;
   
-  img.monster = 0;
-  img.exit = 0;
-  img.hero = 0;
-  img.anim = 0;
-  img.collectible = 0;
-  img.x_offset = 0;
-  img.y_offset = 0;
-  img.direction = 97;
-  img.open_exit = 0;
+
 
   check_arg(argc, argv[1]);
+  init_struct(&img);
   check_convert_and_scan_map(&img, argv[1]);
-  
   
   img.mlx = mlx_init();
   img.window = mlx_new_window(img.mlx, img.x * 72, img.y * 72, "le jeu");
   init_ressources(&img);
-  mlx_loop_hook(img.mlx, display_map, &img);
+  display_stationary(&img);
   mlx_hook(img.window, 2, (1L << 0), which_key, &img);
+  mlx_loop_hook(img.mlx, display_map, &img);
+  
+  mlx_hook(img.window, 17, (1L << 17), destroy, &img);
   mlx_loop(img.mlx);
 
   //ft_check_struct(&map);

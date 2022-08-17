@@ -6,15 +6,20 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:30:40 by iok               #+#    #+#             */
-/*   Updated: 2022/08/14 10:09:27 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/17 02:31:21 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # define BUFFER_SIZE 10
-# define TRUE 1
-# define FALSE 0
+# define LEFT 97
+# define RIGHT 100
+# define DOWN 115
+# define TOP 119
+# define ESC 65307
+# define ANIM_FRAME 50
+# define ANIM_LIMIT 100
 
 
 # include <stdlib.h>
@@ -53,6 +58,7 @@ typedef struct s_data
 	char	*hero_right;
 	char	*hero_right_up;
 	int		direction;
+	int		mooves;
 	int		open_exit;
 	char	**map;
 	int		y;
@@ -66,7 +72,7 @@ typedef struct s_data
 	int		exit;
 	int		monster;
 	int 	i;
-	size_t	anim;
+	int		anim;
 } t_data;
 
 typedef struct s_map
@@ -102,14 +108,15 @@ int		check_init(t_data *img);
 
 
 // CONVERTMAP ///////////////////////////////////////////////////////
-char	**check_convert_and_scan_map(t_data *img, char *argv);
+void	check_convert_and_scan_map(t_data *img, char *argv);
 int		scan_elements(t_data *img);
 
 /////////////////////////////////////////////////////////////////////
 
 // DISPLAY //////////////////////////////////////////////////////////
 int		display_map(t_data *img);
-void	print_hero(t_data *img);	
+void	display_stationary(t_data *img);
+void	print_hero(t_data *img);
 void	print_exit(t_data *img);
 /////////////////////////////////////////////////////////////////////
 
@@ -117,6 +124,7 @@ void	print_exit(t_data *img);
 void	free_ressources(t_data *img);
 void	free_map(t_data *img);
 int		error(char *str);
+void	destroy(t_data *img);
 
 // MOOVES ///////////////////////////////////////////////////////////
 int		which_key(int keycode, t_data *img);

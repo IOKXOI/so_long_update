@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 22:39:43 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/14 14:53:17 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/17 02:41:28 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	check_elements(t_data *img)
 	int	check_error;
 
 	check_error = 0;
+	printf("%d\n", img->hero);
 	if (img->hero != 1)
 	{
 		if (img->hero < 1)
@@ -67,9 +68,12 @@ int	check_elements(t_data *img)
 		write(1, "Error\nCollectible is missing\n", 29);
 		check_error = 1;
 	}
-	if (img->exit < 1)
+	if (img->exit != 1)
 	{
-		write(1, "Error\nExit is missing\n", 22);
+		if(img->exit < 1)
+			write(1, "Error\nExit is missing\n", 22);
+		if(img->exit > 1)
+			write(1, "Error\nToo much exit\n", 20);
 		check_error = 1;
 	}
 	return (check_error);
