@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:30:40 by iok               #+#    #+#             */
-/*   Updated: 2022/08/17 10:57:27 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/18 23:48:36 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # define DOWN 115
 # define TOP 119
 # define ESC 65307
-# define ANIM_FRAME 2000
-# define ANIM_LIMIT 4000
+# define ANIM_FRAME 2
+# define ANIM_LIMIT 4
 
 
 # include <stdlib.h>
@@ -172,5 +172,9 @@ int		moove_enemy_down(t_data *img, t_enemies *this_enemy);
 void	hisokill(t_data *img, t_enemies *this_enemy);
 
 void 	init_ressources(t_data *img);
+
+
+
+void print_struct(t_enemies *enemy);
 
 # endif

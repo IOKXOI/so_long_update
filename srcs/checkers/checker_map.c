@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 22:39:43 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/17 05:37:12 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/18 19:57:47 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ int	check_elements(t_data *img)
 	int	check_error;
 
 	check_error = 0;
-	printf("%d\n", img->hero);
 	if (img->hero != 1)
 	{
 		if (img->hero < 1)

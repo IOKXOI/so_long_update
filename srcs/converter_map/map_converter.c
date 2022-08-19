@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 15:33:44 by iok               #+#    #+#             */
-/*   Updated: 2022/08/16 19:43:37 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/18 19:58:18 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static int check_lenght(int map_lenght, char *s1)
     if (count_characters(s1) != map_lenght)
     {
         free(s1);
-        printf("ici\n");
         write(1, "Invalid map lenght\n", 18);
         return (1);
     }

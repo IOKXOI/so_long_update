@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:58:04 by iok               #+#    #+#             */
-/*   Updated: 2022/08/17 06:28:11 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/19 00:04:11 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ void init_struct(t_data *img)
 	img->hero_right_up = NULL;
 	img->map = NULL;
   img->enemies = NULL;
+  img->i = 0;
 }
 int main(int argc, char **argv)
 {
@@ -126,7 +127,6 @@ int main(int argc, char **argv)
   display_stationary(&img);
   mlx_hook(img.window, 2, (1L << 0), which_key, &img);
   mlx_loop_hook(img.mlx, display_map, &img);
-  
   mlx_hook(img.window, 17, (1L << 17), destroy, &img);
   mlx_loop(img.mlx);
 

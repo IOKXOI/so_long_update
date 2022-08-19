@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 04:58:49 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/17 11:14:28 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/18 19:54:34 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	init_node(t_data *img, int x, int y)
 	img->enemies->random = 0;
 	img->enemies->direction = 3;
 	img->enemies->last = img->enemies;
+	printf("%d %d %d %d\n", img->enemies->fram_one, img->enemies->fram_two, img->enemies->fram_three, img->enemies->fram_four);
 	img->enemies->next = NULL;
 }
 
@@ -61,6 +62,7 @@ t_enemies	*new_node(t_data *img, int x, int y)
 	new_enemy->random = 0;
 	new_enemy->direction = 3;
 	new_enemy->next = NULL;
+//	printf("%d %d %d %d\n", new_enemy->fram_one, new_enemy->fram_two, new_enemy->fram_three, new_enemy->fram_four);
 	return (new_enemy);
 }
 
@@ -70,5 +72,4 @@ void	add_enemies(t_data *img, int x, int y)
 		init_node(img, x, y);
 	else 
 		img->enemies->first->last = new_node(img, x ,y);
-	printf("enemies = %d\n", img->enemies->last->id);
 }

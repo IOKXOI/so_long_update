@@ -6,7 +6,7 @@
 #    By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/31 16:38:13 by sydauria          #+#    #+#              #
-#    Updated: 2022/08/17 10:46:15 by sydauria         ###   ########.fr        #
+#    Updated: 2022/08/18 18:08:41 by sydauria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRC=checker_arg.c\
 	enemies.c\
 	display_enemies.c\
 	enemies_mooves.c\
+	debug.c\
 	main.c
 
 SRCS=$(addprefix $(SRCDIR), $(SRC))
