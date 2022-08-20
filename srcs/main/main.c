@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 15:58:04 by iok               #+#    #+#             */
-/*   Updated: 2022/08/19 00:04:11 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/19 05:52:24 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,34 +82,7 @@ int print_hero_test(t_data *img)
 		img->anim = 0;
 }
 
-void init_struct(t_data *img)
-{
-  img->monster = 0;
-  img->exit = 0;
-  img->hero = 0;
-  img->anim = 0;
-  img->collectible = 0;
-  img->x_offset = 0;
-  img->y_offset = 0;
-  img->direction = 97;
-  img->mooves = 0;
-  img->open_exit = 0;
-  img->ground = NULL;
-	img->wall = NULL;
-	img->chicken = NULL;
-	img->portal = NULL;
-	img->hero_face = NULL;
-	img->hero_face_up = NULL;
-	img->hero_back = NULL;
-	img->hero_back_up = NULL;
-	img->hero_left = NULL;
-	img->hero_left_up = NULL;
-	img->hero_right = NULL;
-	img->hero_right_up = NULL;
-	img->map = NULL;
-  img->enemies = NULL;
-  img->i = 0;
-}
+
 int main(int argc, char **argv)
 {
   t_data img;

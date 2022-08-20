@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 13:49:07 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/17 10:08:53 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/20 03:30:51 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ static void	moove_left(int keycode, t_data *img)
 		mlx_put_image_to_window(img->mlx, img->window, img->ground, (img->x_hero + 1) * 72, img->y_hero * 72);
 		img->map[img->y_hero][img->x_hero + 1] = '0';
 		img->mooves++;
+		//////////////////////////////////////////////////////////////////
+		//debug
+		printtab(img, img->map, img->x, img->y);
+		print_struct(img->enemies);
+		////
 	}
 }
 
@@ -69,6 +74,11 @@ static void	moove_right(int keycode, t_data *img)
 		img->map[img->y_hero][img->x_hero - 1] = '0';
 		mlx_put_image_to_window(img->mlx, img->window, img->ground, (img->x_hero - 1) * 72, img->y_hero * 72);
 		img->mooves++;
+		//////////////////////////////////////////////////////////////////
+		//debug
+		printtab(img, img->map, img->x, img->y);
+		print_struct(img->enemies);
+		////
 	}
 }
 
@@ -98,9 +108,14 @@ static void	moove_down(int keycode, t_data *img)
 		img->map[img->y_hero][img->x_hero] = 'P';
 		img->map[img->y_hero - 1][img->x_hero] = '0';
 		mlx_put_image_to_window(img->mlx, img->window, img->ground, img->x_hero * 72, (img->y_hero - 1) * 72);
-	}
 		img->mooves++;
+		//////////////////////////////////////////////////////////////////
+		//debug
+		printtab(img, img->map, img->x, img->y);
+		print_struct(img->enemies);
+		////
 	}
+}
 
 static void	moove_up(int keycode, t_data *img)
 {
@@ -129,6 +144,11 @@ static void	moove_up(int keycode, t_data *img)
 		img->map[img->y_hero + 1][img->x_hero] = '0';
 		mlx_put_image_to_window(img->mlx, img->window, img->ground, img->x_hero * 72, (img->y_hero + 1) * 72);
 		img->mooves++;
+		//////////////////////////////////////////////////////////////////
+		//debug
+		printtab(img, img->map, img->x, img->y);
+		print_struct(img->enemies);
+		////	
 	}
 }
 

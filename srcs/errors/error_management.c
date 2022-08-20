@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:19:51 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/17 04:50:48 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/19 05:32:50 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,32 @@ void	free_ressources(t_data *img)
 	if (img->portal)
 		free(img->portal);
 }
+
+void	free_enemies_ressources(t_data *img)
+{
+	if (img->hisoka_right1)
+		free(img->hisoka_right1);
+	if (img->hisoka_rightwalk1)
+		free(img->hisoka_rightwalk1);
+	if (img->hisoka_rightwalk2)
+		free(img->hisoka_rightwalk3);
+	if (img->hisoka_rightwalk4)
+		free(img->hisoka_rightwalk4);
+	if (img->hisoka_attackright3)
+		free(img->hisoka_attackright3);
+	if (img->hisoka_left1)
+		free(img->hisoka_left1);
+	if (img->hisoka_leftwalk1)
+		free(img->hisoka_leftwalk1);
+	if (img->hisoka_leftwalk2)
+		free(img->hisoka_leftwalk2);
+	if (img->hisoka_leftwalk3)
+		free(img->hisoka_leftwalk3);
+	if (img->hisoka_leftwalk4)
+		free(img->hisoka_leftwalk4);
+	if (img->hisoka_attackleft3)
+		free(img->hisoka_attackleft3);
+}
+
 
 

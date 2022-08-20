@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 04:58:49 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/18 19:54:34 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/20 04:36:12 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,18 @@ void	init_node(t_data *img, int x, int y)
 	img->enemies->x_pos = x;
 	img->enemies->y_pos = y;
 	img->enemies->direction = 3;
-	img->enemies->anim = (x * y) * ANIM_LIMIT;
-	if (img->enemies->anim > (ANIM_LIMIT * 15))
-		img->enemies->anim /= 2;
-	img->enemies->fram_one = img->enemies->anim / 4;
-	img->enemies->fram_two = img->enemies->fram_one * 2;
+	img->enemies->fram_four = (x * y) * ANIM_LIMIT;
+	if (img->enemies->fram_four > (ANIM_LIMIT * 15))
+		img->enemies->fram_four /= 2;
+	img->enemies->fram_one = img->enemies->fram_four / 4;
+	img->enemies->fram_two = img->enemies->fram_one  * 2;
 	img->enemies->fram_three = img->enemies->fram_one * 3;
 	img->enemies->fram_four = img->enemies->fram_one * 4;
-	img->enemies->anim = 0;
+	img->enemies->i = 1;
 	img->enemies->anim_up = 0;
-	img->enemies->random = 0;
+	img->enemies->random_action = 0;
 	img->enemies->direction = 3;
+	img->enemies->once = 0;
 	img->enemies->last = img->enemies;
 	printf("%d %d %d %d\n", img->enemies->fram_one, img->enemies->fram_two, img->enemies->fram_three, img->enemies->fram_four);
 	img->enemies->next = NULL;
@@ -50,17 +51,17 @@ t_enemies	*new_node(t_data *img, int x, int y)
 	new_enemy->id = img->monster;
 	new_enemy->x_pos = x;
 	new_enemy->y_pos = y;
-	new_enemy->anim = (x * y) * ANIM_LIMIT;
-	if (new_enemy->anim > (ANIM_LIMIT * 15))
-		new_enemy->anim /= 2;
-	new_enemy->fram_one = new_enemy->anim / 4;
+	new_enemy->fram_four = (x * y) * ANIM_LIMIT;
+	if (new_enemy->fram_four > (ANIM_LIMIT * 15))
+		new_enemy->fram_four /= 2;
+	new_enemy->fram_one = new_enemy->fram_four / 4;
 	new_enemy->fram_two = new_enemy->fram_one * 2;
 	new_enemy->fram_three = new_enemy->fram_one * 3;
 	new_enemy->fram_four = new_enemy->fram_one * 4;
-	new_enemy->anim = 0;
-	new_enemy->anim_up = 0;
-	new_enemy->random = 0;
+	new_enemy->i = 1;
+	new_enemy->random_action = 0;
 	new_enemy->direction = 3;
+	new_enemy->once = 0;
 	new_enemy->next = NULL;
 //	printf("%d %d %d %d\n", new_enemy->fram_one, new_enemy->fram_two, new_enemy->fram_three, new_enemy->fram_four);
 	return (new_enemy);

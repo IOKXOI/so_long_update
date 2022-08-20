@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:27:29 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/17 10:40:21 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/19 08:24:09 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ void	destroy(t_data *img)
 
 void	gg_wp(t_data *img)
 {
-	t_final	success;
-	int	random;
+	//t_final	success;
+	//int	random;
 
 	//random = img->mooves % 10;
-	random = 0;
+	//random = 0;
 	destroy(img);/*
 	success.mlx = mlx_init();
 	if (random == 0)

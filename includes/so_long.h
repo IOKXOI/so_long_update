@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:30:40 by iok               #+#    #+#             */
-/*   Updated: 2022/08/18 23:48:36 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/20 04:36:29 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # define DOWN 115
 # define TOP 119
 # define ESC 65307
-# define ANIM_FRAME 2
-# define ANIM_LIMIT 4
+# define ANIM_FRAME 1000
+# define ANIM_LIMIT 2000
 
 
 # include <stdlib.h>
@@ -39,9 +39,10 @@ typedef struct s_enemies
 	int					x_pos;
 	int					y_pos;
 	int					direction;
-	int					anim;
+	int					once;
+	int					i;
 	int					anim_up;
-	int					random;
+	int					random_action;
 	int					fram_one;
 	int					fram_two;
 	int					fram_three;
@@ -107,17 +108,6 @@ typedef struct s_data
 	int			anim;
 } t_data;
 
-typedef struct s_final
-{
-	void	*win;
-	void	*mlx;
-	char	*image;
-	int 	width;
-	int		height;
-} t_final;
-
-
-
 
 // GNL FONCTIONS ////////////////////////////////////////////////////
 void	*ft_memmove(void *dest, const void *src, size_t size);
@@ -130,20 +120,25 @@ size_t	ft_strlen(const char *str);
 ssize_t	fill_buffer(int fd, char *buffer);
 /////////////////////////////////////////////////////////////////////
 
+///INIT /////////////////////////////////////////////////////////////
+void	init_struct(t_data *img);
+void	init_enemy_struct(t_enemies *enemies);
+void	init_struct(t_data *img);
+/////////////////////////////////////////////////////////////////////
+
 ///CHECKS ///////////////////////////////////////////////////////////
 void	check_walls(t_data *img);
 int		count_characters(char *s1);
 int		check_elements(t_data *img);
 void	check_arg(int argc, char *argv);
 int		check_init(t_data *img);
-
+int		check_init_enemies(t_data *img);
 /////////////////////////////////////////////////////////////////////
 
 
 // CONVERTMAP ///////////////////////////////////////////////////////
 void	check_convert_and_scan_map(t_data *img, char *argv);
 int		scan_elements(t_data *img);
-
 /////////////////////////////////////////////////////////////////////
 
 // DISPLAY //////////////////////////////////////////////////////////
@@ -156,9 +151,11 @@ void	print_static_hisoka(t_data *img, t_enemies *this_enemy);
 
 // FREE /////////////////////////////////////////////////////////////
 void	free_ressources(t_data *img);
+void	free_enemies_ressources(t_data *img);
 void	free_map(t_data *img);
 int		error(char *str);
 void	destroy(t_data *img);
+/////////////////////////////////////////////////////////////////////
 
 void	add_enemies(t_data *img, int x, int y);
 void	print_enemy(t_data *img);
@@ -176,5 +173,6 @@ void 	init_ressources(t_data *img);
 
 
 void print_struct(t_enemies *enemy);
+void printtab(t_data *img, char **tab, int x_max, int y_max);
 
 # endif
