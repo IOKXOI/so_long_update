@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   display_map.c                                      :+:      :+:    :+:   */
+/*   error_management2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/26 18:49:06 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/25 20:05:20 by sydauria         ###   ########.fr       */
+/*   Created: 2022/08/25 19:53:57 by sydauria          #+#    #+#             */
+/*   Updated: 2022/08/25 20:26:14 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	display_map(t_data *img)
+int	check_open(char *map_ber)
 {
-	int	x;
-	int	y;
+	int	fd;
 
-	x = 0;
-	y = 0;
-	display_moove(img);
-	img->map[img->y_hero][img->x_hero] = 'P';
-	while (y < img->y && x < img->x)
-	{
-		if (img->map[y][x] == 'E')
-			print_exit(img);
-		if (img->map[y][x] == 'P')
-			print_hero(img);
-		x++;
-		if (x == img->x)
-		{
-			x = 0;
-			y++;
-		}
-	}
-	print_enemy(img);
-	img->i++;
-	return (0);
+	fd = open(map_ber, O_DIRECTORY);
+	if (fd != -1)
+		error("Error\nMain > convert_map > open");
+	fd = open(map_ber, O_RDONLY);
+	if (fd < 0)
+		error("Error\nMain > convert_map > open");
+	return (fd);
 }

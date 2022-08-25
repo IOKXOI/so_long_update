@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:30:40 by iok               #+#    #+#             */
-/*   Updated: 2022/08/20 04:36:29 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/25 20:39:47 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,18 @@ typedef struct s_enemies
 	struct s_enemies	*next;
 } t_enemies;
 
+typedef struct s_card
+{
+	struct s_card	*first;
+	int				id;
+	int				x_pos;
+	int				y_pos;
+	int				fram_one;
+	int				fram_two;
+	struct s_card	*last;
+	struct s_card	*next;
+} t_card;
+
 typedef struct s_data
 {
     void		*img;
@@ -78,6 +90,7 @@ typedef struct s_data
 	char		*hero_right_up;
 	int			direction;
 	int			mooves;
+	int			mooves_displayed;
 	int			open_exit;
 	char		**map;
 	int			y;
@@ -97,13 +110,18 @@ typedef struct s_data
 	char		*hisoka_rightwalk3;
 	char		*hisoka_rightwalk4;
 	char		*hisoka_attackright3;
-	
+	char		*hisoka_attackrightcard6;
 	char		*hisoka_left1;
 	char		*hisoka_leftwalk1;
 	char		*hisoka_leftwalk2;
 	char		*hisoka_leftwalk3;
 	char		*hisoka_leftwalk4;
 	char		*hisoka_attackleft3;
+	char		*hisoka_attackleftcard6;
+	char		*card_right1;
+	char		*card_right2;
+	char		*card_left1;
+	char		*card_left2;
 	int 		i;
 	int			anim;
 } t_data;
@@ -132,7 +150,7 @@ int		count_characters(char *s1);
 int		check_elements(t_data *img);
 void	check_arg(int argc, char *argv);
 int		check_init(t_data *img);
-int		check_init_enemies(t_data *img);
+int		check_open(char *map_ber);
 /////////////////////////////////////////////////////////////////////
 
 
@@ -147,14 +165,16 @@ void	display_stationary(t_data *img);
 void	print_hero(t_data *img);
 void	print_exit(t_data *img);
 void	print_static_hisoka(t_data *img, t_enemies *this_enemy);
+void	display_moove(t_data *img);
 /////////////////////////////////////////////////////////////////////
 
 // FREE /////////////////////////////////////////////////////////////
 void	free_ressources(t_data *img);
 void	free_enemies_ressources(t_data *img);
 void	free_map(t_data *img);
+void	free_list(t_data *img);
 int		error(char *str);
-void	destroy(t_data *img);
+int		destroy(t_data *img);
 /////////////////////////////////////////////////////////////////////
 
 void	add_enemies(t_data *img, int x, int y);
@@ -167,9 +187,9 @@ int		moove_enemy_right(t_data *img, t_enemies *this_enemy);
 int		moove_enemy_top(t_data *img, t_enemies *this_enemy);
 int		moove_enemy_down(t_data *img, t_enemies *this_enemy);
 void	hisokill(t_data *img, t_enemies *this_enemy);
-
-void 	init_ressources(t_data *img);
-
+size_t	random_number(t_data *img, t_enemies *this_enemy);
+void	init_ressources_and_check(t_data *img);
+int		look_for_this_action(t_data *img, t_enemies *this_enemy);
 
 
 void print_struct(t_enemies *enemy);

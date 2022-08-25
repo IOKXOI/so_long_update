@@ -29,7 +29,4 @@ void printtab(t_data *img, char **tab, int x_max, int y_max)
 			x = 0;
 			y++;
 		}
-		printf("=======================\n");
-		printf("juste ca ca marche pas  : %p \n", img->enemies->first);
-		printf("commente icic pour drole de comportement tour de boucle : %d \n", img->anim);
 }

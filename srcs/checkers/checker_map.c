@@ -6,13 +6,13 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 22:39:43 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/18 19:57:47 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/24 20:29:18 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int		scan_elements(t_data *img)
+int	scan_elements(t_data *img)
 {
 	int	y;
 	int	x;
@@ -43,13 +43,13 @@ int		scan_elements(t_data *img)
 				add_enemies(img, x, y);
 			}
 			else if ((char)img->map[y][x] != '0' && (char)img->map[y][x] != '1')
-				return(img->map[y][x]);
+				return (img->map[y][x]);
 			x++;
 		}
 		x = 0;
 		y++;
 	}
-	return(0);
+	return (0);
 }
 
 int	check_elements(t_data *img)
@@ -72,21 +72,11 @@ int	check_elements(t_data *img)
 	}
 	if (img->exit != 1)
 	{
-		if(img->exit < 1)
+		if (img->exit < 1)
 			write(1, "Error\nExit is missing\n", 22);
-		if(img->exit > 1)
+		if (img->exit > 1)
 			write(1, "Error\nToo much exit\n", 20);
 		check_error = 1;
 	}
 	return (check_error);
 }
-//void check_map_size(&map);
-/*
-
-check_map(argv[1], t_data *img)
-{
-	check_walls(&map);
-	
-}
-
-*/

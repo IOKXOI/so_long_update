@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 05:35:37 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/19 08:27:08 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/25 18:51:09 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,40 +41,70 @@ void	init_struct(t_data *img)
 
 static void	init_ressources_enemies(t_data *img)
 {
-	img->hisoka_right1 = mlx_xpm_file_to_image(img->mlx, "./ressources/hisoka_right1.xpm", &img->width, &img->height);
-	img->hisoka_rightwalk1 = mlx_xpm_file_to_image(img->mlx, "./ressources/hisoka_rightwalk1.xpm", &img->width, &img->height);
-	img->hisoka_rightwalk2 = mlx_xpm_file_to_image(img->mlx, "./ressources/hisoka_rightwalk2.xpm", &img->width, &img->height);
-	img->hisoka_rightwalk3 = mlx_xpm_file_to_image(img->mlx, "./ressources/hisoka_rightwalk3.xpm", &img->width, &img->height);
-	img->hisoka_rightwalk4 = mlx_xpm_file_to_image(img->mlx, "./ressources/hisoka_rightwalk4.xpm", &img->width, &img->height);
-	img->hisoka_left1 = mlx_xpm_file_to_image(img->mlx, "./ressources/hisoka_left1.xpm", &img->width, &img->height);
-	img->hisoka_leftwalk1 = mlx_xpm_file_to_image(img->mlx, "./ressources/hisoka_leftwalk1.xpm", &img->width, &img->height);
-	img->hisoka_leftwalk2 = mlx_xpm_file_to_image(img->mlx, "./ressources/hisoka_leftwalk2.xpm", &img->width, &img->height);
-	img->hisoka_leftwalk3 = mlx_xpm_file_to_image(img->mlx, "./ressources/hisoka_leftwalk3.xpm", &img->width, &img->height);
-	img->hisoka_leftwalk4 = mlx_xpm_file_to_image(img->mlx, "./ressources/hisoka_leftwalk4.xpm", &img->width, &img->height);
-	img->hisoka_attackright3 = mlx_xpm_file_to_image(img->mlx, "./ressources/Hisoka_attackright3.xpm", &img->width, &img->height);
-	img->hisoka_attackleft3 = mlx_xpm_file_to_image(img->mlx, "./ressources/Hisoka_attackleft3.xpm", &img->width, &img->height);
+	img->hisoka_right1 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/right1.xpm", &img->width, &img->height);
+	img->hisoka_rightwalk1 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/rightwalk1.xpm", &img->width, &img->height);
+	img->hisoka_rightwalk2 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/rightwalk2.xpm", &img->width, &img->height);
+	img->hisoka_rightwalk3 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/rightwalk3.xpm", &img->width, &img->height);
+	img->hisoka_rightwalk4 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/rightwalk4.xpm", &img->width, &img->height);
+	img->hisoka_left1 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/left1.xpm", &img->width, &img->height);
+	img->hisoka_leftwalk1 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/leftwalk1.xpm", &img->width, &img->height);
+	img->hisoka_leftwalk2 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/leftwalk2.xpm", &img->width, &img->height);
+	img->hisoka_leftwalk3 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/leftwalk3.xpm", &img->width, &img->height);
+	img->hisoka_leftwalk4 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/leftwalk4.xpm", &img->width, &img->height);
+	img->hisoka_attackright3 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/attackright3.xpm", &img->width, &img->height);
+	img->hisoka_attackleft3 = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/attackleft3.xpm", &img->width, &img->height);
 }
 
-void	init_ressources(t_data *img)
+static void	init_ressources(t_data *img)
 {
-	img->wall = mlx_xpm_file_to_image(img->mlx, "./ressources/obstacle.xpm", &img->width, &img->height);
-	img->ground = mlx_xpm_file_to_image(img->mlx, "./ressources/ground.xpm", &img->width, &img->height);
-	img->chicken = mlx_xpm_file_to_image(img->mlx, "./ressources/collectible.xpm", &img->width, &img->height);
-	img->portal = mlx_xpm_file_to_image(img->mlx, "./ressources/portal.xpm", &img->width, &img->height);img->hero_face = mlx_xpm_file_to_image(img->mlx, "./ressources/face.xpm", &img->width, &img->height);
-	img->hero_face_up = mlx_xpm_file_to_image(img->mlx, "./ressources/face_up.xpm", &img->width, &img->height);
-	img->hero_back = mlx_xpm_file_to_image(img->mlx, "./ressources/back.xpm", &img->width, &img->height);
-	img->hero_back_up = mlx_xpm_file_to_image(img->mlx, "./ressources/back_up.xpm", &img->width, &img->height);
-	img->hero_left = mlx_xpm_file_to_image(img->mlx, "./ressources/left.xpm", &img->width, &img->height);
-	img->hero_left_up = mlx_xpm_file_to_image(img->mlx, "./ressources/left_up.xpm", &img->width, &img->height);
-	img->hero_right = mlx_xpm_file_to_image(img->mlx, "./ressources/right.xpm", &img->width, &img->height);
-	img->hero_right_up = mlx_xpm_file_to_image(img->mlx, "./ressources/right_up.xpm", &img->width, &img->height);
+	img->wall = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/obstacle.xpm", &img->width, &img->height);
+	img->ground = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/ground.xpm", &img->width, &img->height);
+	img->hero_face = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/face.xpm", &img->width, &img->height);
+	img->hero_face_up = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/face_up.xpm", &img->width, &img->height);
+	img->hero_back = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/back.xpm", &img->width, &img->height);
+	img->hero_back_up = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/back_up.xpm", &img->width, &img->height);
+	img->hero_left = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/left.xpm", &img->width, &img->height);
+	img->hero_left_up = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/left_up.xpm", &img->width, &img->height);
+	img->hero_right = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/right.xpm", &img->width, &img->height);
+	img->hero_right_up = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/right_up.xpm", &img->width, &img->height);
+	img->portal = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/portal.xpm", &img->width, &img->height);
+	img->chicken = mlx_xpm_file_to_image
+		(img->mlx, "./ressources/collectible.xpm", &img->width, &img->height);
 	init_ressources_enemies(img);
-	if (check_init(img) || check_init_enemies(img))
+}
+
+void	init_ressources_and_check(t_data *img)
+{
+	init_ressources(img);
+	if (check_init(img))
 	{
 		free_map(img);
 		free(img->mlx);
 		free_ressources(img);
-		error("Initialisation failed, check xpm ressources");
+		free_list(img);
+		error("Error\nInitialisation failed, check xpm ressources");
 	}
 }
-

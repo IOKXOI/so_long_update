@@ -6,7 +6,7 @@
 #    By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/31 16:38:13 by sydauria          #+#    #+#              #
-#    Updated: 2022/08/19 08:23:01 by sydauria         ###   ########.fr        #
+#    Updated: 2022/08/25 20:40:26 by sydauria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,13 +32,16 @@ SRC=checker_arg.c\
 	display_hero.c\
 	display_elements.c\
 	error_management.c\
+	error_management2.c\
 	keyhook.c\
 	enemies.c\
 	display_enemies.c\
 	enemies_mooves.c\
 	init.c\
+	predict_moove.c\
+	random.c\
 	main.c\
-	debug.c\
+	display_mooves.c\
 
 SRCS=$(addprefix $(SRCDIR), $(SRC))
 OBJ=$(SRC:.c=.o) 
@@ -73,13 +76,13 @@ $(NAME):$(PATH_MLX)libmlx.a $(OBJS)
 		$(MAKE) -C $(PATH_LIBFT)
 		printf "\t$(INFO_COLOR)$(NAME) $(NO_COLOR)Removed all objects$(NO_COLOR).\n"
 		printf "\n\t$(NO_COLOR)-------- $(INFO_COLOR) Start Compilation for ${NAME} $(NO_COLOR)--------\n"	
-		$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(MLX) $(LIBFT)
+		$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX) $(LIBFT)
 		printf "2s \r"
 		printf "\t$(INFO_COLOR)$(NAME)$(NO_COLOR) successfully compiled. $(OK_COLOR)✓$(NO_COLOR)\n"
 
 $(OBJSDIR)%.o: $(SRCDIR)%.c
 	mkdir -p $(@D)
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\t\t\t$(NO_COLOR)Creating $(INFO_COLOR)%-30s $(OK_COLOR)✓$(NO_COLOR)\r" "$@"
 
 $(PATH_MLX)libmlx.a:
@@ -87,7 +90,7 @@ $(PATH_MLX)libmlx.a:
 	printf "\033[32;1m%s OK%40.40s\n\033[0m" $(PATH_MLX) ""
 
 .c.o:
-	$(CC) -c $< -o $(<:.c=.o) $(FLAGS)
+	$(CC) -c $< -o $(<:.c=.o) $(CFLAGS)
 	mv *.o ./(OBJSDIR)
 
 clean:

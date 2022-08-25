@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:19:51 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/19 05:32:50 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/25 20:29:23 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	error(char *str)
 	perror(str);
 	exit(EXIT_FAILURE);
 }
-
 
 void	free_map(t_data *img)
 {
@@ -86,5 +85,20 @@ void	free_enemies_ressources(t_data *img)
 		free(img->hisoka_attackleft3);
 }
 
+void	free_list(t_data *img)
+{
+	void	*next;
 
-
+	img->enemies = img->enemies->first;
+	
+	if (img->enemies)
+	{
+		while (img->enemies)
+		{
+			next = img->enemies->next;
+			free(img->enemies);
+			img->enemies = next;
+		}
+		free(img->enemies);
+	}
+}
