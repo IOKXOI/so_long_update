@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 09:50:44 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/24 20:24:19 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/25 23:51:05 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static int	check_init_enemies(t_data *img)
 {
-	if (!img->hisoka_right1 || !img->hisoka_rightwalk1
-		|| !img->hisoka_rightwalk2 || !img->hisoka_rightwalk3
-		|| !img->hisoka_rightwalk4 ||!img->hisoka_attackright3
-		|| !img->hisoka_left1 || !img->hisoka_leftwalk1
-		|| !img->hisoka_leftwalk2 || !img->hisoka_leftwalk3
-		|| !img->hisoka_leftwalk4 || !img->hisoka_attackleft3)
+	if (!img->right1 || !img->rightwalk1
+		|| !img->rightwalk2 || !img->rightwalk3
+		|| !img->rightwalk4 ||!img->attackright3
+		|| !img->left1 || !img->leftwalk1
+		|| !img->leftwalk2 || !img->leftwalk3
+		|| !img->leftwalk4 || !img->attackleft3)
 		return (1);
 	return (0);
 }

@@ -6,11 +6,27 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 05:35:37 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/25 18:51:09 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/26 06:19:13 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	init_struct_enemy(t_data *img)
+{
+	img->right1 = NULL;
+	img->rightwalk1 = NULL;
+	img->rightwalk2 = NULL;
+	img->rightwalk3 = NULL;
+	img->rightwalk4 = NULL;
+	img->left1 = NULL;
+	img->leftwalk1 = NULL;
+	img->leftwalk2 = NULL;
+	img->leftwalk3 = NULL;
+	img->leftwalk4 = NULL;
+	img->attackright3 = NULL;
+	img->attackleft3 = NULL;
+}
 
 void	init_struct(t_data *img)
 {
@@ -37,33 +53,34 @@ void	init_struct(t_data *img)
 	img->hero_right = NULL;
 	img->hero_right_up = NULL;
 	img->enemies = NULL;
+	init_struct_enemy(img);
 }
 
 static void	init_ressources_enemies(t_data *img)
 {
-	img->hisoka_right1 = mlx_xpm_file_to_image
+	img->right1 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/right1.xpm", &img->width, &img->height);
-	img->hisoka_rightwalk1 = mlx_xpm_file_to_image
+	img->rightwalk1 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/rightwalk1.xpm", &img->width, &img->height);
-	img->hisoka_rightwalk2 = mlx_xpm_file_to_image
+	img->rightwalk2 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/rightwalk2.xpm", &img->width, &img->height);
-	img->hisoka_rightwalk3 = mlx_xpm_file_to_image
+	img->rightwalk3 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/rightwalk3.xpm", &img->width, &img->height);
-	img->hisoka_rightwalk4 = mlx_xpm_file_to_image
+	img->rightwalk4 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/rightwalk4.xpm", &img->width, &img->height);
-	img->hisoka_left1 = mlx_xpm_file_to_image
+	img->left1 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/left1.xpm", &img->width, &img->height);
-	img->hisoka_leftwalk1 = mlx_xpm_file_to_image
+	img->leftwalk1 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/leftwalk1.xpm", &img->width, &img->height);
-	img->hisoka_leftwalk2 = mlx_xpm_file_to_image
+	img->leftwalk2 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/leftwalk2.xpm", &img->width, &img->height);
-	img->hisoka_leftwalk3 = mlx_xpm_file_to_image
+	img->leftwalk3 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/leftwalk3.xpm", &img->width, &img->height);
-	img->hisoka_leftwalk4 = mlx_xpm_file_to_image
+	img->leftwalk4 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/leftwalk4.xpm", &img->width, &img->height);
-	img->hisoka_attackright3 = mlx_xpm_file_to_image
+	img->attackright3 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/attackright3.xpm", &img->width, &img->height);
-	img->hisoka_attackleft3 = mlx_xpm_file_to_image
+	img->attackleft3 = mlx_xpm_file_to_image
 		(img->mlx, "./ressources/attackleft3.xpm", &img->width, &img->height);
 }
 
@@ -101,9 +118,12 @@ void	init_ressources_and_check(t_data *img)
 	init_ressources(img);
 	if (check_init(img))
 	{
+		destroy_ressources(img);
 		free_map(img);
+		mlx_destroy_window(img->mlx, img->window);
+		mlx_destroy_image(img->mlx, img->img);
+		mlx_destroy_display(img->mlx);
 		free(img->mlx);
-		free_ressources(img);
 		free_list(img);
 		error("Error\nInitialisation failed, check xpm ressources");
 	}

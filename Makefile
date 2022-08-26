@@ -6,7 +6,7 @@
 #    By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/31 16:38:13 by sydauria          #+#    #+#              #
-#    Updated: 2022/08/25 20:40:26 by sydauria         ###   ########.fr        #
+#    Updated: 2022/08/26 06:55:46 by sydauria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,10 +36,12 @@ SRC=checker_arg.c\
 	keyhook.c\
 	enemies.c\
 	display_enemies.c\
+	display_frame.c\
 	enemies_mooves.c\
 	init.c\
 	predict_moove.c\
 	random.c\
+	collect.c\
 	main.c\
 	display_mooves.c\
 
@@ -47,8 +49,7 @@ SRCS=$(addprefix $(SRCDIR), $(SRC))
 OBJ=$(SRC:.c=.o) 
 OBJS=$(addprefix $(OBJSDIR),$(OBJ))
 DEPS=$(OBJS:.o=.d)
-
-CC= gcc
+CC=gcc
 FLAGS= -g -MMD -I $(HEADERSDIR)
 CFLAGS= -Wall -Werror -Wextra -g -MMD -I $(HEADERSDIR)
 INCLUDES= -I$(HEADERSDIR) -I$(PATH_LIBFT) $(MLX) $(LIBFT)
@@ -112,4 +113,3 @@ print-% : ; @echo $* = $($*)
 -include:$(DEPS)
 
 .PHONY: re all clean fclean 
-

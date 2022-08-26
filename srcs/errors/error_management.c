@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 15:19:51 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/25 20:29:23 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/26 00:01:54 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,36 +61,36 @@ void	free_ressources(t_data *img)
 
 void	free_enemies_ressources(t_data *img)
 {
-	if (img->hisoka_right1)
-		free(img->hisoka_right1);
-	if (img->hisoka_rightwalk1)
-		free(img->hisoka_rightwalk1);
-	if (img->hisoka_rightwalk2)
-		free(img->hisoka_rightwalk3);
-	if (img->hisoka_rightwalk4)
-		free(img->hisoka_rightwalk4);
-	if (img->hisoka_attackright3)
-		free(img->hisoka_attackright3);
-	if (img->hisoka_left1)
-		free(img->hisoka_left1);
-	if (img->hisoka_leftwalk1)
-		free(img->hisoka_leftwalk1);
-	if (img->hisoka_leftwalk2)
-		free(img->hisoka_leftwalk2);
-	if (img->hisoka_leftwalk3)
-		free(img->hisoka_leftwalk3);
-	if (img->hisoka_leftwalk4)
-		free(img->hisoka_leftwalk4);
-	if (img->hisoka_attackleft3)
-		free(img->hisoka_attackleft3);
+	if (img->right1)
+		free(img->right1);
+	if (img->rightwalk1)
+		free(img->rightwalk1);
+	if (img->rightwalk2)
+		free(img->rightwalk3);
+	if (img->rightwalk4)
+		free(img->rightwalk4);
+	if (img->attackright3)
+		free(img->attackright3);
+	if (img->left1)
+		free(img->left1);
+	if (img->leftwalk1)
+		free(img->leftwalk1);
+	if (img->leftwalk2)
+		free(img->leftwalk2);
+	if (img->leftwalk3)
+		free(img->leftwalk3);
+	if (img->leftwalk4)
+		free(img->leftwalk4);
+	if (img->attackleft3)
+		free(img->attackleft3);
 }
 
 void	free_list(t_data *img)
 {
 	void	*next;
 
-	img->enemies = img->enemies->first;
-	
+	if (img->enemies)
+		img->enemies = img->enemies->first;
 	if (img->enemies)
 	{
 		while (img->enemies)

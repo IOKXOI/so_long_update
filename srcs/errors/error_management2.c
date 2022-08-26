@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:53:57 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/25 20:26:14 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/26 04:31:09 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,23 @@ int	check_open(char *map_ber)
 	if (fd < 0)
 		error("Error\nMain > convert_map > open");
 	return (fd);
+}
+
+void	flush_gnl(int fd)
+{
+	char	*to_free;
+
+	to_free = get_next_line(fd);
+	while (to_free)
+	{
+		free(to_free);
+		to_free = get_next_line(fd);
+	}
+}
+
+void	bad_element(t_data *img)
+{
+	free_map(img);
+	free_list(img);
+	error("Error\nFew invalid character on the map !");
 }

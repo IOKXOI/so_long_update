@@ -6,13 +6,33 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 22:39:43 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/24 20:29:18 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/26 04:31:31 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	scan_elements(t_data *img)
+static void	exit_located(t_data *img, int x, int y)
+{
+	img->exit = img->exit + 1;
+	img->x_exit = x;
+	img->y_exit = y;
+}
+
+static void	hero_located(t_data *img, int x, int y)
+{
+	img->hero = img->hero + 1;
+	img->y_h = y;
+	img->x_h = x;
+}
+
+static void	enemy_located(t_data *img, int x, int y)
+{
+	img->monster = img->monster + 1;
+	add_enemies(img, x, y);
+}
+
+void	scan_elements(t_data *img)
 {
 	int	y;
 	int	x;
@@ -26,30 +46,18 @@ int	scan_elements(t_data *img)
 			if ((char)img->map[y][x] == 'C')
 				img->collectible = img->collectible + 1;
 			else if ((char)img->map[y][x] == 'E')
-			{
-				img->exit = img->exit + 1;
-				img->x_exit = x;
-				img->y_exit = y;
-			}
+				exit_located(img, x, y);
 			else if ((char)img->map[y][x] == 'P')
-			{
-				img->hero = img->hero + 1;
-				img->y_hero = y;
-				img->x_hero = x;
-			}
+				hero_located(img, x, y);
 			else if ((char)img->map[y][x] == 'M')
-			{
-				img->monster = img->monster + 1;
-				add_enemies(img, x, y);
-			}
+				enemy_located(img, x, y);
 			else if ((char)img->map[y][x] != '0' && (char)img->map[y][x] != '1')
-				return (img->map[y][x]);
+				bad_element(img);
 			x++;
 		}
 		x = 0;
 		y++;
 	}
-	return (0);
 }
 
 int	check_elements(t_data *img)

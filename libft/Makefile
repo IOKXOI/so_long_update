@@ -6,14 +6,14 @@
 #    By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 05:59:28 by sydauria          #+#    #+#              #
-#    Updated: 2022/07/11 01:42:11 by sydauria         ###   ########.fr        #
+#    Updated: 2022/08/25 21:50:41 by sydauria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CHAR = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isprint.c ft_isascii.c \
 	ft_tolower.c ft_toupper.c
 
-STR = ft_strlen.c ft_strjoin.c ft_split.c ft_strtrim.c ft_substr.c ft_strnstr.c \
+STR = ft_strjoin.c ft_split.c ft_strtrim.c ft_substr.c ft_strnstr.c \
 		ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strlcpy.c ft_strlcat.c \
 		ft_strdup.c ft_strmapi.c ft_striteri.c ft_atoi.c ft_itoa.c 
 

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   display_frame.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 06:57:35 by sydauria          #+#    #+#             */
-/*   Updated: 2022/01/04 18:36:47 by sydauria         ###   ########.fr       */
+/*   Created: 2022/08/25 22:29:46 by sydauria          #+#    #+#             */
+/*   Updated: 2022/08/26 01:57:45 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-size_t	ft_strlen(const char *str)
+void	moove_pos(t_enemies *this_enemy, int x, int y)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	this_enemy->i = -1;
+	this_enemy->x += x;
+	this_enemy->y += y;
+	this_enemy->once = 0;
 }

@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 05:58:15 by sydauria          #+#    #+#             */
-/*   Updated: 2022/08/25 20:37:35 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/26 06:43:55 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	hisokill(t_data *img, t_enemies *this_enemy)
 	while (i < (ANIM_LIMIT * 50))
 	{
 		if (this_enemy->direction == 3)
-			mlx_put_image_to_window(img->mlx, img->window, img->hisoka_attackright3,
-				this_enemy->x_pos * 72, this_enemy->y_pos * 72);
+			mlx_put_image_to_window(img->mlx, img->window, img->attackright3,
+				this_enemy->x * 72, this_enemy->y * 72);
 		else
-			mlx_put_image_to_window(img->mlx, img->window, img->hisoka_attackleft3,
-				this_enemy->x_pos * 72, this_enemy->y_pos * 72);
+			mlx_put_image_to_window(img->mlx, img->window, img->attackleft3,
+				this_enemy->x * 72, this_enemy->y * 72);
 		i++;
 	}
 	write(1, "GAME OVER !", 11);
@@ -34,11 +34,11 @@ void	hisokill(t_data *img, t_enemies *this_enemy)
 void	print_static_hisoka(t_data *img, t_enemies *this_enemy)
 {
 	if (this_enemy->direction == 1)
-		mlx_put_image_to_window(img->mlx, img->window, img->hisoka_left1,
-			this_enemy->x_pos * 72, this_enemy->y_pos * 72);
+		mlx_put_image_to_window(img->mlx, img->window, img->left1,
+			this_enemy->x * 72, this_enemy->y * 72);
 	else
-		mlx_put_image_to_window(img->mlx, img->window, img->hisoka_right1,
-			this_enemy->x_pos * 72, this_enemy->y_pos * 72);
+		mlx_put_image_to_window(img->mlx, img->window, img->right1,
+			this_enemy->x * 72, this_enemy->y * 72);
 	if (this_enemy->i >= this_enemy->fram_four)
 	{
 		this_enemy->i = -1;
@@ -57,7 +57,7 @@ void	set_anim(t_data *img, t_enemies *this_enemy)
 	}
 }
 
-void	display_anim(t_data *img, t_enemies *this_enemy)
+static void	display_anim(t_data *img, t_enemies *this_enemy)
 {
 	if (this_enemy->random_action == 0)
 		print_static_hisoka(img, this_enemy);

@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 15:33:44 by iok               #+#    #+#             */
-/*   Updated: 2022/08/25 20:03:57 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/26 04:21:33 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static int	count_lines(char *map_ber, t_data *img)
 	img->y = 0;
 	fd = check_open(map_ber);
 	s1 = get_next_line(fd);
+	if (!s1)
+		error("Error\n count_line > GNL");
 	img->y = img->y + 1;
 	img->x = count_characters(s1);
 	while (s1)
@@ -51,6 +53,7 @@ static int	count_lines(char *map_ber, t_data *img)
 			img->y = img->y + 1;
 		if (s1 && *s1 != '\n' && check_lenght(img->x, s1))
 		{
+			flush_gnl(fd);
 			close(fd);
 			exit(EXIT_FAILURE);
 		}
@@ -81,6 +84,7 @@ static void	fill_tab(char **tab, char *argv, int limit)
 		}
 		y++;
 	}
+	flush_gnl(fd);
 	close(fd);
 }
 
@@ -93,6 +97,7 @@ void	check_convert_and_scan_map(t_data *img, char *argv)
 	scan_elements(img);
 	if (check_elements(img))
 	{
+		free_list(img);
 		free_map(img);
 		exit(EXIT_FAILURE);
 	}

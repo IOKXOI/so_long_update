@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:30:40 by iok               #+#    #+#             */
-/*   Updated: 2022/08/25 20:39:47 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/26 06:57:09 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # define ESC 65307
 # define ANIM_FRAME 1000
 # define ANIM_LIMIT 2000
-
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -36,8 +35,8 @@ typedef struct s_enemies
 {
 	struct s_enemies	*first;
 	int					id;
-	int					x_pos;
-	int					y_pos;
+	int					x;
+	int					y;
 	int					direction;
 	int					once;
 	int					i;
@@ -49,23 +48,23 @@ typedef struct s_enemies
 	int					fram_four;
 	struct s_enemies	*last;
 	struct s_enemies	*next;
-} t_enemies;
+}	t_enemies;
 
 typedef struct s_card
 {
 	struct s_card	*first;
 	int				id;
-	int				x_pos;
-	int				y_pos;
+	int				x;
+	int				y;
 	int				fram_one;
 	int				fram_two;
 	struct s_card	*last;
 	struct s_card	*next;
-} t_card;
+}	t_card;
 
 typedef struct s_data
 {
-    void		*img;
+	void		*img;
 	char		*addr;
 	int			bits_per_pixel;
 	int			line_length;
@@ -95,8 +94,8 @@ typedef struct s_data
 	char		**map;
 	int			y;
 	int			x;
-	int			x_hero;
-	int			y_hero;
+	int			x_h;
+	int			y_h;
 	int			x_exit;
 	int			y_exit;
 	int			collectible;
@@ -104,28 +103,27 @@ typedef struct s_data
 	int			exit;
 	int			monster;
 	t_enemies	*enemies;
-	char		*hisoka_right1;
-	char		*hisoka_rightwalk1;
-	char		*hisoka_rightwalk2;
-	char		*hisoka_rightwalk3;
-	char		*hisoka_rightwalk4;
-	char		*hisoka_attackright3;
-	char		*hisoka_attackrightcard6;
-	char		*hisoka_left1;
-	char		*hisoka_leftwalk1;
-	char		*hisoka_leftwalk2;
-	char		*hisoka_leftwalk3;
-	char		*hisoka_leftwalk4;
-	char		*hisoka_attackleft3;
-	char		*hisoka_attackleftcard6;
+	char		*right1;
+	char		*rightwalk1;
+	char		*rightwalk2;
+	char		*rightwalk3;
+	char		*rightwalk4;
+	char		*attackright3;
+	char		*attackrightcard6;
+	char		*left1;
+	char		*leftwalk1;
+	char		*leftwalk2;
+	char		*leftwalk3;
+	char		*leftwalk4;
+	char		*attackleft3;
+	char		*attackleftcard6;
 	char		*card_right1;
 	char		*card_right2;
 	char		*card_left1;
 	char		*card_left2;
-	int 		i;
+	int			i;
 	int			anim;
-} t_data;
-
+}	t_data;
 
 // GNL FONCTIONS ////////////////////////////////////////////////////
 void	*ft_memmove(void *dest, const void *src, size_t size);
@@ -153,19 +151,19 @@ int		check_init(t_data *img);
 int		check_open(char *map_ber);
 /////////////////////////////////////////////////////////////////////
 
-
 // CONVERTMAP ///////////////////////////////////////////////////////
 void	check_convert_and_scan_map(t_data *img, char *argv);
-int		scan_elements(t_data *img);
+void	scan_elements(t_data *img);
 /////////////////////////////////////////////////////////////////////
 
 // DISPLAY //////////////////////////////////////////////////////////
-int		display_map(t_data *img);
+int		display_hero(t_data *img);
 void	display_stationary(t_data *img);
 void	print_hero(t_data *img);
-void	print_exit(t_data *img);
 void	print_static_hisoka(t_data *img, t_enemies *this_enemy);
 void	display_moove(t_data *img);
+void	display_frame(t_data *img, t_enemies *this_enemy, char	*texture);
+void	add_portal(t_data *img);
 /////////////////////////////////////////////////////////////////////
 
 // FREE /////////////////////////////////////////////////////////////
@@ -175,11 +173,16 @@ void	free_map(t_data *img);
 void	free_list(t_data *img);
 int		error(char *str);
 int		destroy(t_data *img);
+void	flush_gnl(int fd);
+void	destroy_ressources(t_data *img);
+void	bad_element(t_data *img);
 /////////////////////////////////////////////////////////////////////
 
 void	add_enemies(t_data *img, int x, int y);
 void	print_enemy(t_data *img);
+int		destroy_failure(t_data *img);
 void	gg_wp(t_data *img);
+void	moove_pos(t_enemies *this_enemy, int x, int y);
 // MOOVES ///////////////////////////////////////////////////////////
 int		which_key(int keycode, t_data *img);
 int		moove_enemy_left(t_data *img, t_enemies *this_enemy);
@@ -187,12 +190,9 @@ int		moove_enemy_right(t_data *img, t_enemies *this_enemy);
 int		moove_enemy_top(t_data *img, t_enemies *this_enemy);
 int		moove_enemy_down(t_data *img, t_enemies *this_enemy);
 void	hisokill(t_data *img, t_enemies *this_enemy);
+void	collect(t_data *img);
 size_t	random_number(t_data *img, t_enemies *this_enemy);
 void	init_ressources_and_check(t_data *img);
 int		look_for_this_action(t_data *img, t_enemies *this_enemy);
 
-
-void print_struct(t_enemies *enemy);
-void printtab(t_data *img, char **tab, int x_max, int y_max);
-
-# endif
+#endif
