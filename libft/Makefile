@@ -6,7 +6,7 @@
 #    By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 05:59:28 by sydauria          #+#    #+#              #
-#    Updated: 2022/08/25 21:50:41 by sydauria         ###   ########.fr        #
+#    Updated: 2022/08/27 20:32:13 by sydauria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,3 +60,5 @@ re: fclean all
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
 	gcc -nostartfiles -shared -o libft.so $(OBJ) ${BONUS_OBJS}
+
+.PHONY: re all clean fclean

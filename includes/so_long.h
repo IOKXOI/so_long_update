@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:30:40 by iok               #+#    #+#             */
-/*   Updated: 2022/08/26 06:57:09 by sydauria         ###   ########.fr       */
+/*   Updated: 2022/08/27 20:48:08 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,17 +124,6 @@ typedef struct s_data
 	int			i;
 	int			anim;
 }	t_data;
-
-// GNL FONCTIONS ////////////////////////////////////////////////////
-void	*ft_memmove(void *dest, const void *src, size_t size);
-char	*stop_condition(ssize_t nb, char *valid_line);
-char	*extract_str(char *buffer, ssize_t *new_line);
-char	*get_next_line(int fd);
-char	*ft_strjoin_and_free(char *actual_line, char *temp);
-char	*ft_strndup(char *buffer, size_t n);
-size_t	ft_strlen(const char *str);
-ssize_t	fill_buffer(int fd, char *buffer);
-/////////////////////////////////////////////////////////////////////
 
 ///INIT /////////////////////////////////////////////////////////////
 void	init_struct(t_data *img);

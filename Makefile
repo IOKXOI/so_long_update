@@ -6,7 +6,7 @@
 #    By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/31 16:38:13 by sydauria          #+#    #+#              #
-#    Updated: 2022/08/26 06:55:46 by sydauria         ###   ########.fr        #
+#    Updated: 2022/08/27 22:03:04 by sydauria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,50 +61,55 @@ DEBUG= -g
 #                                 COLORS                                       #
 ################################################################################
 
-NO_COLOR 		=	\033[38;5;15m
-OK_COLOR		=	\033[38;5;2m
+NO_COLOR 		=	\033[m
+OK_COLOR		=	\033[31m
 ERROR_COLOR		=	\033[38;5;1m
 WARN_COLOR		=	\033[38;5;3m
 SILENT_COLOR	=	\033[38;5;245m
 INFO_COLOR		=	\033[38;5;140m
 OBJ_COLOR		=	\033[0;36m
-
+COLOUR_GREEN	=	\033[0;32m
+COLOUR_RED		=	\033[0;31m
+COLOUR_BLUE		=	\033[0;34m
+COLOUR_END		=	\033[0m
+BOLD			=	\033[1m
 
 all:$(NAME)
 
-$(NAME):$(PATH_MLX)libmlx.a $(OBJS)
-		printf "\t$(NO_COLOR)All objects for $(INFO_COLOR)$(NAME) $(NO_COLOR)where successfully created.\n"
-		$(MAKE) -C $(PATH_LIBFT)
-		printf "\t$(INFO_COLOR)$(NAME) $(NO_COLOR)Removed all objects$(NO_COLOR).\n"
-		printf "\n\t$(NO_COLOR)-------- $(INFO_COLOR) Start Compilation for ${NAME} $(NO_COLOR)--------\n"	
+$(NAME): $(PATH_MLX)libmlx.a $(OBJS)
+		@echo "$(INFO_COLOR)All objects for $(COLOUR_RED)$(BOLD)$(NAME)$(COLOUR_END)$(COLOUR_END) $(INFO_COLOR)where successfully created.\n$(COLOUR_END)"
+		$(MAKE) -C $(PATH_LIBFT) all --quiet
+		@echo "\n$(NO_COLOR)======= $(INFO_COLOR) Start Compilation for ${NAME} $(NO_COLOR)=======\n"	
 		$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX) $(LIBFT)
-		printf "2s \r"
-		printf "\t$(INFO_COLOR)$(NAME)$(NO_COLOR) successfully compiled. $(OK_COLOR)✓$(NO_COLOR)\n"
+		@echo "\n"
+		@echo "$(INFO_COLOR)$(NAME)$(NO_COLOR) successfully compiled. $(OK_COLOR)✓$(NO_COLOR)\n"
 
-$(OBJSDIR)%.o: $(SRCDIR)%.c
+$(OBJSDIR)%.o: $(SRCDIR)%.c $(HEADERSDIR)/so_long.h
 	mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
-	@printf "\t\t\t$(NO_COLOR)Creating $(INFO_COLOR)%-30s $(OK_COLOR)✓$(NO_COLOR)\r" "$@"
+	@echo "$(BOLD)$(INFO_COLOR)Created : $(COLOUR_RED)$(BOLD)$@$(OK_COLOR)✓$(NO_COLOR)$(COLOUR_END)$(SILENT_COLOR)"
 
 $(PATH_MLX)libmlx.a:
+	@echo "$(COLOUR_END)$(COLOUR_BLUE)compilation for :$(BOLD)$(PATH_MLX)\n"
 	$(MAKE) -C $(PATH_MLX) all --quiet
-	printf "\033[32;1m%s OK%40.40s\n\033[0m" $(PATH_MLX) ""
-
-.c.o:
-	$(CC) -c $< -o $(<:.c=.o) $(CFLAGS)
-	mv *.o ./(OBJSDIR)
+	@echo "$(COLOUR_BLUE)$(PATH_MLX) compilated.$(COLOUR_END)$(OK_COLOR)✓$(NO_COLOR)\n"
 
 clean:
+	@echo "$(COLOUR_BLUE)"
 	$(MAKE) -C $(PATH_LIBFT) clean
 	rm -f $(OBJS)
+	@echo "$(COLOUR_END)"
+
+bonus:$(NAME)
 
 fclean: clean
+	@echo "$(COLOUR_BLUE)"
 	$(MAKE) -C $(PATH_LIBFT) fclean
 	$(MAKE) -C $(PATH_MLX) clean --quiet --jobs
 	rm -f $(NAME)
 	rm -rf $(OBJSDIR)
-	printf "\t\t$(INFO_COLOR)$(NAME) $(NO_COLOR)Removed $(INFO_COLOR)$(NAME)$(NO_COLOR).\n"
-
+	@echo "$(COLOUR_BLUE)Removed $(NAME)$(NO_COLOR).\n"
+	@echo "$(COLOUR_END)"
 
 re: fclean all
 
@@ -112,4 +117,4 @@ print-% : ; @echo $* = $($*)
 
 -include:$(DEPS)
 
-.PHONY: re all clean fclean 
+.PHONY: re all clean fclean
